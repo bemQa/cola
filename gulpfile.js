@@ -37,13 +37,15 @@ function styles() {
 		.pipe(sass.sync({outputStyle: 'compressed'}).on('error', sass.logError))
 		.pipe(postcss([ autoprefixer() ]))
 		.pipe(replace('../../', '../'))
-		.pipe(gulp.dest('./dist/css'));
+		.pipe(gulp.dest('./dist/css'))
+		.pipe(browserSync.stream());
 }
 
 function scripts() {
 	return gulp.src('app/js/main.js')
 		.pipe(webpack(webpackConfig))
-		.pipe(gulp.dest('dist/js'));
+		.pipe(gulp.dest('dist/js'))
+		.pipe(browserSync.stream());
 }
 
 function img() {
@@ -64,10 +66,16 @@ function watch() {
   });
 	gulp.watch('./app/sass/**/*.scss', styles);
 	gulp.watch('./app/js/**/*.js', scripts);
+	gulp.watch('./*.html', html);
 }
 
 function clean() {
 	return del(['dist/*']);
+}
+
+function html() {
+	return gulp.src('*.html')
+		.pipe(browserSync.stream());
 }
 
 gulp.task('styles', styles);
@@ -76,7 +84,7 @@ gulp.task('watch', watch);
 gulp.task('img', img);
 
 let build = gulp.series(clean,
-	gulp.parallel(gulp.series( styles ), scripts, img, svg, fonts)
+	gulp.parallel(gulp.series( styles ), scripts, img, svg, html, fonts)
 );
 
 gulp.task('build', build);
