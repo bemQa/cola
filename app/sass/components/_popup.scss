@@ -1,0 +1,99 @@
+.popup {
+  z-index: -3;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(#000, .7);
+  @include transition-ease;
+
+  &[data-popup="support"] {
+    padding-top: 30px;
+  }
+
+  &[data-popup="thanks"] {
+    padding-top: 30px;
+  }
+
+  &__window {
+    @include transition-ease;
+    max-width: 340px;
+    padding: 49px 28px 0;
+    transform: translateY(-100vw);
+
+    @include response-to(small) {
+      max-width: 280px;
+    }
+  }
+
+  .button {
+    margin-top: 33px;
+    margin-bottom: -24px;
+  }
+
+  &__buttons {
+    margin-top: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    .button {
+      margin-top: 0;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+
+  &[data-popup="cookie"] {
+
+    .popup__window {
+      padding: 20px 15px 32px;
+    }
+
+    .cookie__text {
+      margin-bottom: 32px;
+
+      a {
+        color: #0048D4;
+      }
+    }
+  }
+
+  .switch {
+    width: 70px;
+    height: 28px;
+    border: 1px solid #898989;
+
+    &__button {
+      width: 22px;
+      height: 22px;
+      top: 50%;
+      transform: translateY(-50%);
+      left: calc(100% - 25px);
+      background-color: #898989;
+      @include transition-ease;
+    }
+
+    input {
+      display: none;
+
+      &:checked + .switch__button {
+        background-color: $primary-color;
+        left: 3px;
+      }
+    }
+  }
+
+  &.active {
+    z-index: 100;
+    opacity: 1;
+
+    .popup__window {
+      transform: translateY(0);
+    }
+  }
+
+  .form {
+    padding: 0;
+  }
+}

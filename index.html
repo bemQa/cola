@@ -143,7 +143,7 @@
 </div>
 
 <main class="full-width pos-r main">
-    <form class="px-15 pos-r bg-white radius-20 wrap form">
+    <form class="px-15 pos-r bg-white radius-20 mx-auto wrap form">
         <figure class="pos-a form__logo">
             <img src="./dist/img/logo.png"
                  width="276"
@@ -175,6 +175,7 @@
                    placeholder="Код"
                    class="grey-border radius-30 block full-width light form__field_input"
                    name="code">
+            <span class="pos-a radius-50-percent block pointer question" data-modal="code"></span>
         </div>
 
         <div class="pos-r full-width mb-20 form__field">
@@ -188,7 +189,7 @@
             <label class="block pos-r form__field_label" for="phone_1">Hомер телефона:</label>
             <input type="text"
                    id="phone_1"
-                   placeholder="+7 (_ _ _) _ _ _ - _ _ - _ _"
+                   placeholder="+7(___)___-__-__"
                    class="grey-border radius-30 block full-width light form__field_input phone-mask"
                    name="phone_1">
         </div>
@@ -197,7 +198,7 @@
             <label class="block pos-r form__field_label" for="phone_2">Повторите номер телефона:</label>
             <input type="text"
                    id="phone_2"
-                   placeholder="+7 (_ _ _) _ _ _ - _ _ - _ _"
+                   placeholder="+7(___)___-__-__"
                    class="grey-border radius-30 block full-width light form__field_input phone-mask"
                    name="phone_2">
         </div>
@@ -276,12 +277,192 @@
                 </select>
             </div>
         </div>
-        
+
         <p class="form__note text-12 light">Внимательно проверьте введённые данные.
             <br>Мы не сможем доставить приз, если что-то введено неправильно.</p>
+
+        <div class="pos-r full-width mb-20 form__field check">
+            <label for="all-right" class="pos-r form__field_label check">
+                <input type="checkbox"
+                       name="all-right"
+                       id="all-right">
+                <span class="light text-12 pos-r pointer flex check__text">Всё введено правильно</span>
+            </label>
+        </div>
+
+        <div class="pos-r full-width mb-20 form__field check">
+            <label for="policy" class="pos-r form__field_label check">
+                <input type="checkbox"
+                       name="policy"
+                       id="policy">
+                <span class="light text-12 pos-r pointer flex check__text">
+                    <a href="#" class="light text-12 underline">Политика конфиденциальности</a>
+                </span>
+            </label>
+        </div>
+
+        <div class="pos-r full-width mb-20 form__field check">
+            <label for="conditions" class="pos-r form__field_label check">
+                <input type="checkbox"
+                       name="conditions"
+                       id="conditions">
+                <span class="light text-12 pos-r pointer flex check__text">
+                    <a href="#" class="light text-12 underline">Условия и положения</a>
+                </span>
+            </label>
+        </div>
+
+        <div class="pos-r full-width mb-20 form__field check">
+            <label for="cookie" class="pos-r form__field_label check">
+                <input type="checkbox"
+                       name="cookie"
+                       id="cookie">
+                <span class="light text-12 pos-r pointer flex check__text">
+                    <a href="#"
+                       class="light text-12 underline"
+                       data-modal="cookie">Соглашение об использовании файлов cookie</a>
+                </span>
+            </label>
+        </div>
+
+        <button type="submit" class="mx-auto mb-20 block button radius-30 bold disabled"
+                data-modal="confirm">отправить
+        </button>
+
+        <a href="#"
+           class="block underline light text-center mx-auto text-16"
+           data-modal="support">Служба поддержки</a>
+
     </form>
     <div class="pos-a full-width bg-pattern"></div>
 </main>
+
+<div class="pos-f flex flex-items-center flex-justify-center popup" data-popup="confirm" data-close="true">
+    <div class="bg-white radius-20 popup__window">
+        <p class="light text-16 text-center">Ваша заявка принята.
+            <br>Как только ваш приз будет вам отправлен, вы получите уведомление
+            <br>об этом на электронную почту, указанную при регистрации.</p>
+        <a href="#" class="mx-auto text-center bold pointer block button radius-30" data-close="true">понятно</a>
+    </div>
+</div>
+
+<div class="pos-f flex flex-items-center flex-justify-center popup" data-popup="code" data-close="true">
+    <div class="bg-white radius-20 popup__window">
+        <p class="light text-16 text-center">Код ваучера
+            <br>Введи в это поле свой уникальный код, полученный в приложении Coca-Cola.
+            <br><br>Код может быть использован только один раз.</p>
+        <a href="#" class="mx-auto text-center bold pointer block button radius-30" data-close="true">понятно</a>
+    </div>
+</div>
+
+<div class="pos-f flex flex-items-center flex-justify-center popup" data-popup="support" data-close="true">
+    <div class="bg-white radius-20 popup__window">
+        <p class="bold caption text-center mb-20">Отправьте нам сообщение и мы обязательно ответим</p>
+        <form class="form">
+            <div class="pos-r full-width mb-20 form__field">
+                <input type="text"
+                       id="support-name"
+                       placeholder="Ваше имя"
+                       class="grey-border radius-30 block full-width light form__field_input"
+                       name="support-name">
+            </div>
+            <div class="pos-r full-width mb-20 form__field">
+                <input type="text"
+                       id="support-email"
+                       placeholder="Ваш e-mail"
+                       class="grey-border radius-30 block full-width light form__field_input"
+                       name="support-email">
+            </div>
+            <div class="pos-r full-width mb-20 form__field">
+                <div class="full-width select">
+                    <select data-placeholder="Тема сообщения">
+                        <option value=""></option>
+                        <option value="1">Тема сообщения 1</option>
+                        <option value="2">Тема сообщения 2</option>
+                        <option value="3">Тема сообщения 3</option>
+                        <option value="4">Тема сообщения 4</option>
+                        <option value="5">Тема сообщения 5</option>
+                    </select>
+                </div>
+            </div>
+            <div class="pos-r full-width mb-20 form__field">
+                <textarea id="support-message"
+                          placeholder="Ваш e-mail"
+                          class="grey-border radius-30 block full-width light form__field_input"
+                          name="support-message"></textarea>
+            </div>
+            <button type="submit" class="mx-auto text-center bold pointer block button radius-30" data-modal="thanks">
+                отправить
+            </button>
+        </form>
+    </div>
+</div>
+
+<div class="pos-f flex flex-items-center flex-justify-center popup" data-popup="thanks" data-close="true">
+    <div class="bg-white radius-20 popup__window">
+        <p class="light text-16 text-center">Спасибо!
+            <br><br>Ваше обращение
+            <br>принято.</p>
+        <a href="#" class="mx-auto text-center bold pointer block button radius-30" data-close="true">понятно</a>
+    </div>
+</div>
+
+
+<div class="pos-f flex flex-items-center flex-justify-center popup" data-popup="cookie" data-close="true">
+    <div class="bg-white radius-20 popup__window">
+        <p class="light text-16 cookie__text">Мы используем файлы cookie, чтобы управлять веб-сайтом, показывать
+            персонализированный контент и решать бизнес-задачи. Подробнее о том, как мы используем файлы cookie,
+            рассказано ниже. Вы можете разрешить использование всех файлов cookie или только определенных, или же
+            отказаться ото всех. Узнайте больше на странице
+            <a class="underline" href="#">Политика cookie</a></p>
+
+        <div class="pos-r accordion">
+            <div class="flex pointer pos-r flex-items-center flex-justify-between accordion__header">
+                <p class="text-16 light pos-r accordion__header_text">Строго
+                    <br>необходимые
+                    <br>файлы cookie</p>
+                <p class="light text-12 text-grey">Всегда активно</p>
+            </div>
+            <p class="text-12 light accordion__body">Эти файлы cookie необходимы для функционирования веб-сайта и не
+                могут быть отключены в наших системах. Как правило, они активируются только в ответ на ваши действия,
+                аналогичные запросу услуг, такие как настройка уровня конфиденциальности, вход в систему или заполнение
+                форм. Вы можете настроить браузер таким образом, чтобы он блокировал эти файлы cookie или уведомлял вас
+                об их использовании, но в таком случае возможно, что некоторые разделы веб-сайта не будут работать.</p>
+        </div>
+
+        <div class="pos-r accordion">
+            <div class="flex pointer pos-r flex-items-center flex-justify-between accordion__header">
+                <p class="text-16 light pos-r accordion__header_text">Эксплуатационные
+                    <br>файлы cookie</p>
+                <label class="block pointer pos-r radius-30 switch">
+                    <input type="checkbox"
+                           name="switch"
+                           checked="checked"
+                           id="switch">
+                    <span class="block pos-a radius-50-percent switch__button"></span>
+                </label>
+            </div>
+            <p class="text-12 light accordion__body"> Эти файлы cookie позволяют нам подсчитывать количество посещений и
+                источников трафика, чтобы оценивать и улучшать работу нашего веб-сайта. Благодаря им мы знаем, какие
+                страницы являются наиболее и наименее популярными, и видим, каким образом посетители перемещаются по
+                веб-сайту. Все данные, собираемые при помощи этих cookie, группируются в статистику, а значит, являются
+                анонимными. Если вы не одобрите использование этих файлов cookie, у нас не будет данных о посещении вами
+                нашего веб-сайта.</p>
+        </div>
+
+        <div class="popup__buttons">
+            <a href="#"
+               class="button mx-auto text-center bold pointer block radius-30"
+               data-close="true">одобрить всё</a>
+            <a href="#"
+               class="button mx-auto text-center bold pointer block radius-30"
+               data-close="true">подтвердить выбор</a>
+            <a href="#"
+               class="button mx-auto text-center bold pointer block radius-30"
+               data-close="true">отклонить всё</a>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>

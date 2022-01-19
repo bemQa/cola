@@ -3,6 +3,11 @@ import * as $ from 'jquery';
 import './jquery.validate.min.js';
 import './jquery.inputmask.min';
 import './select2.min';
+import {showPopup, hidePopup} from "./popup";
+import {maskInit} from "./inputMask";
+import {loader} from "./loader";
+import {accordions} from "./accordion";
+
 
 const mobileWidth = 767;
 let isMobile = checkWidth();
@@ -12,37 +17,19 @@ window.addEventListener('resize', () => {
 });
 
 setTimeout(() => {
-    if (!document.querySelector('.loader')) {
-        return;
-    }
-
-    const loader = document.querySelector('.loader');
-    if (loader.classList.contains('active')) {
-        loader.classList.remove('active');
-
-        setTimeout(() => {
-            loader.parentElement.removeChild(loader);
-        }, 300)
-    }
+    loader();
 }, 2500);
 
 window.addEventListener('load', function () {
 
-    (function loader() {
-        if (!document.querySelector('.loader')) {
-            return;
-        }
+    loader();
 
-        const loader = document.querySelector('.loader');
+    (function accordion() {
+        const accordionsList = [...document.querySelectorAll('.accordion')];
 
-        if (loader.classList.contains('active')) {
-            loader.classList.remove('active');
-        }
+        if (!accordionsList[0]) return;
 
-        setTimeout(() => {
-            loader.parentElement.removeChild(loader);
-        }, 1500);
-
+        accordions(accordionsList);
     })();
 
     (function phoneMasks() {
@@ -51,14 +38,24 @@ window.addEventListener('load', function () {
 
         phones.each(function () {
             maskInit($(this));
-        })
+        });
+    })();
 
-        function maskInit(elem) {
-            elem.inputmask({
-                mask:"+7(999)999-99-99",
-                "clearIncomplete": true
-            });
+    (function popup() {
+        if (!document.querySelector('.popup')) {
+            return;
         }
+
+        const popupBtns = [...document.querySelectorAll('[data-modal]')];
+        const popups = [...document.querySelectorAll('.popup')];
+
+        popups.forEach(p => {
+            p.addEventListener('click', hidePopup);
+        });
+
+        popupBtns.forEach(p => {
+            p.addEventListener('click', showPopup);
+        });
     })();
 
     (function selects() {
@@ -83,42 +80,6 @@ window.addEventListener('load', function () {
                 minimumResultsForSearch: Infinity,
                 dropdownParent: $('.select')
             });
-        }
-    })();
-
-    (function popup() {
-        if (!document.querySelector('.popup')) {
-            return;
-        }
-
-        const popupBtns = [...document.querySelectorAll('.recipes__item')];
-        const popups = [...document.querySelectorAll('.popup')];
-
-        popups.forEach(p => {
-            p.addEventListener('click', hidePopup);
-        });
-
-        popupBtns.forEach(p => {
-            p.addEventListener('click', showPopup);
-        });
-
-        function showPopup() {
-            const id = this.dataset.modal;
-            const popup = document.querySelector(`.popup[data-popup="${id}"]`);
-
-            popup.classList.add('active');
-            document.body.classList.add('no-scrolling');
-        }
-
-        function hidePopup(e) {
-            const target = e.target;
-
-            if (target.dataset.close) {
-                e.preventDefault();
-                const popup = document.querySelector('.popup.active');
-                popup.classList.remove('active');
-                document.body.classList.remove('no-scrolling');
-            }
         }
     })();
 });
