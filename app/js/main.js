@@ -7,6 +7,7 @@ import {showPopup, hidePopup} from "./popup";
 import {maskInit} from "./inputMask";
 import {loader} from "./loader";
 import {accordions} from "./accordion";
+// import {validate} from "./validation";
 
 
 const mobileWidth = 767;
@@ -23,6 +24,92 @@ setTimeout(() => {
 window.addEventListener('load', function () {
 
     loader();
+
+    /*(function checkValidate() {
+        const form = $('form');
+
+        $.each(form, function () {
+            $(this).validate({
+                ignore: [],
+                errorClass: 'error',
+                validClass: 'success',
+                rules: {
+                    code: {
+                        required: true
+                    },
+                    region: {
+                        required: true
+                    },
+                    fio: {
+                        required: true
+                    },
+                    phone_1: {
+                        required: true
+                    },
+                    phone_2: {
+                        required: true
+                    },
+                    email: {
+                        required: true
+                    },
+                    prize: {
+                        required: true
+                    },
+                    index: {
+                        required: true
+                    },
+                    city: {
+                        required: true
+                    },
+                    street: {
+                        required: true
+                    },
+                    flat: {
+                        required: true
+                    },
+                    house: {
+                        required: true
+                    },
+                    all_right: {
+                        required: true
+                    },
+                    policy: {
+                        required: true
+                    },
+                    conditions: {
+                        required: true
+                    },
+                    cookie: {
+                        required: true
+                    },
+                    support_email: {
+                        required: true
+                    },
+                    support_topic: {
+                        required: true
+                    },
+                    support_name: {
+                        required: true
+                    },
+                    support_message: {
+                        required: true
+                    },
+                },
+                errorElement: 'span',
+                errorPlacement: function (error, element) {
+                    const placement = $(element).data('error');
+                    if (placement) {
+                        $(placement).append(error);
+                    } else {
+                        error.insertBefore(element);
+                    }
+                }
+            });
+        });
+        $.validator.addMethod('Email', function (value, element) {
+            return this.optional(element) || /\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,6}/.test(value);
+        });
+    })();*/
 
     (function accordion() {
         const accordionsList = [...document.querySelectorAll('.accordion')];

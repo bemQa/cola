@@ -12,6 +12,16 @@
     padding-top: 30px;
   }
 
+  &[data-popup="cookie"] {
+
+    .popup__window {
+
+      @include response-to(small) {
+        max-width: 340px;
+      }
+    }
+  }
+
   &[data-popup="thanks"] {
     padding-top: 30px;
   }
@@ -24,6 +34,8 @@
 
     @include response-to(small) {
       max-width: 280px;
+      max-height: 85vh;
+      overflow-y: scroll;
     }
   }
 

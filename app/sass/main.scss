@@ -179,6 +179,28 @@ html {
       background-position: center;
       background-size: initial;
     }
+
+    span.error {
+      display: none!important;
+    }
+
+    select,
+    input,
+    textarea {
+      color: #000;
+
+      &.error {
+        border-color: red;
+
+        & + span.select2 .select2-selection--single {
+          border-color: red;
+        }
+
+        & + .check__text:before {
+          border-color: red;
+        }
+      }
+    }
   }
 
   &__note {

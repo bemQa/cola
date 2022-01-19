@@ -143,7 +143,7 @@
 </div>
 
 <main class="full-width pos-r main">
-    <form class="px-15 pos-r bg-white radius-20 mx-auto wrap form">
+    <form class="px-15 pos-r bg-white radius-20 mx-auto wrap form" data-validate="main">
         <figure class="pos-a form__logo">
             <img src="./dist/img/logo.png"
                  width="276"
@@ -159,7 +159,7 @@
 
         <div class="pos-r full-width mb-20 form__field">
             <div class="full-width select">
-                <select data-placeholder="Регион">
+                <select name="region" data-placeholder="Регион">
                     <option value=""></option>
                     <option value="1">Регион 1</option>
                     <option value="2">Регион 2</option>
@@ -228,7 +228,7 @@
 
         <div class="pos-r full-width mb-20 form__field">
             <div class="full-width select">
-                <select data-placeholder="Город">
+                <select name="city" data-placeholder="Город">
                     <option value=""></option>
                     <option value="1">Город 1</option>
                     <option value="2">Город 2</option>
@@ -241,7 +241,7 @@
 
         <div class="pos-r full-width mb-20 form__field">
             <div class="full-width select">
-                <select data-placeholder="Улица">
+                <select name="street" data-placeholder="Улица">
                     <option value=""></option>
                     <option value="1">Улица 1</option>
                     <option value="2">Улица 2</option>
@@ -254,7 +254,7 @@
 
         <div class="pos-r full-width mb-20 form__field">
             <div class="full-width select">
-                <select data-placeholder="Дом, строение, корпус">
+                <select name="house" data-placeholder="Дом, строение, корпус">
                     <option value=""></option>
                     <option value="1">Дом, строение, корпус 1</option>
                     <option value="2">Дом, строение, корпус 2</option>
@@ -267,7 +267,7 @@
 
         <div class="pos-r full-width mb-20 form__field">
             <div class="full-width select">
-                <select data-placeholder="Квартира / дом / офис">
+                <select name="flat" data-placeholder="Квартира / дом / офис">
                     <option value=""></option>
                     <option value="1">Квартира / дом / офис 1</option>
                     <option value="2">Квартира / дом / офис 2</option>
@@ -282,10 +282,10 @@
             <br>Мы не сможем доставить приз, если что-то введено неправильно.</p>
 
         <div class="pos-r full-width mb-20 form__field check">
-            <label for="all-right" class="pos-r form__field_label check">
+            <label for="all_right" class="pos-r form__field_label check">
                 <input type="checkbox"
-                       name="all-right"
-                       id="all-right">
+                       name="all_right"
+                       id="all_right">
                 <span class="light text-12 pos-r pointer flex check__text">Всё введено правильно</span>
             </label>
         </div>
@@ -325,8 +325,10 @@
             </label>
         </div>
 
-        <button type="submit" class="mx-auto mb-20 block button radius-30 bold disabled"
-                data-modal="confirm">отправить
+        <button type="submit"
+                class="mx-auto mb-20 block button radius-30 bold"
+                data-modal="confirm"
+        >отправить
         </button>
 
         <a href="#"
@@ -358,24 +360,24 @@
 <div class="pos-f flex flex-items-center flex-justify-center popup" data-popup="support" data-close="true">
     <div class="bg-white radius-20 popup__window">
         <p class="bold caption text-center mb-20">Отправьте нам сообщение и мы обязательно ответим</p>
-        <form class="form">
+        <form class="form" data-validate="support">
             <div class="pos-r full-width mb-20 form__field">
                 <input type="text"
-                       id="support-name"
+                       id="support_name"
                        placeholder="Ваше имя"
                        class="grey-border radius-30 block full-width light form__field_input"
-                       name="support-name">
+                       name="support_name">
             </div>
             <div class="pos-r full-width mb-20 form__field">
                 <input type="text"
-                       id="support-email"
+                       id="support_email"
                        placeholder="Ваш e-mail"
                        class="grey-border radius-30 block full-width light form__field_input"
-                       name="support-email">
+                       name="support_email">
             </div>
             <div class="pos-r full-width mb-20 form__field">
                 <div class="full-width select">
-                    <select data-placeholder="Тема сообщения">
+                    <select name="support_topic" data-placeholder="Тема сообщения">
                         <option value=""></option>
                         <option value="1">Тема сообщения 1</option>
                         <option value="2">Тема сообщения 2</option>
@@ -386,13 +388,15 @@
                 </div>
             </div>
             <div class="pos-r full-width mb-20 form__field">
-                <textarea id="support-message"
-                          placeholder="Ваш e-mail"
+                <textarea id="support_message"
+                          placeholder="Текст сообщения"
                           class="grey-border radius-30 block full-width light form__field_input"
-                          name="support-message"></textarea>
+                          name="support_message"></textarea>
             </div>
-            <button type="submit" class="mx-auto text-center bold pointer block button radius-30" data-modal="thanks">
-                отправить
+            <button type="submit"
+                    class="mx-auto text-center bold pointer block button radius-30"
+                    data-modal="thanks"
+                    >отправить
             </button>
         </form>
     </div>
@@ -406,7 +410,6 @@
         <a href="#" class="mx-auto text-center bold pointer block button radius-30" data-close="true">понятно</a>
     </div>
 </div>
-
 
 <div class="pos-f flex flex-items-center flex-justify-center popup" data-popup="cookie" data-close="true">
     <div class="bg-white radius-20 popup__window">
