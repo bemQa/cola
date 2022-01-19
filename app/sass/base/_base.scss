@@ -1,14 +1,98 @@
 .container {
   max-width: $container;
-  padding: 0;
   margin: 0 auto;
-
-  @include response-to(large) {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
 }
 
 .no-scrolling {
   overflow: hidden;
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+.px-15 {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.block {
+  display: block;
+}
+
+.radius-20 {
+  border-radius: 20px;
+}
+
+.radius-30 {
+  border-radius: 30px;
+}
+
+.radius-50-percent {
+  border-radius: 50%;
+}
+
+.wrap {
+  max-width: 340px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.light {
+  font-weight: 300;
+}
+
+.pos-r {
+  position: relative;
+}
+
+.pos-a {
+  position: absolute;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.caption {
+  font-size: 22px;
+  line-height: 27px;
+}
+
+.text-12 {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.grey-border {
+  border: 1px solid #E5E5E5;
+}
+
+.button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  color: #fff;
+  text-transform: uppercase;
+  width: 187px;
+  padding: 16px 0;
+  background-color: $primary-color;
+  cursor: pointer;
+  border: none;
+
+  .disabled {
+    opacity: .5;
+  }
 }

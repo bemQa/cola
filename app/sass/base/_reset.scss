@@ -3,6 +3,7 @@ p,
 ul, li,
 h1, h2, h3, h4, h5, h6,
 input,
+figure,
 textarea,
 a {
   margin: 0;
@@ -11,6 +12,8 @@ a {
   border: none;
   text-decoration: none;
   outline: none;
+  font-size: inherit;
+  line-height: inherit;
 }
 * {
   box-sizing: border-box;

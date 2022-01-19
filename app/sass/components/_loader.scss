@@ -8,7 +8,7 @@
   left: 0;
   right: 0;
   @include flex-center();
-  background-color: #073818;
+  background-color: #fff;
 
   &.active {
     opacity: 1;
