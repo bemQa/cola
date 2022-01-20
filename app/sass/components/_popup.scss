@@ -8,11 +8,28 @@
   background-color: rgba(#000, .7);
   @include transition-ease;
 
+  @include response-to(small) {
+    height: 100vh;
+    overflow-y: scroll;
+  }
+
   &[data-popup="support"] {
     padding-top: 30px;
+
+    @include response-to(small) {
+      align-items: flex-start;
+      padding-top: 70px;
+      padding-bottom: 80px;
+    }
   }
 
   &[data-popup="cookie"] {
+
+    @include response-to(small) {
+      align-items: flex-start;
+      padding-top: 70px;
+      padding-bottom: 80px;
+    }
 
     .popup__window {
 
@@ -34,8 +51,6 @@
 
     @include response-to(small) {
       max-width: 280px;
-      max-height: 85vh;
-      overflow-y: scroll;
     }
   }
 
