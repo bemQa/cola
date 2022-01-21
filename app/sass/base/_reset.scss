@@ -39,3 +39,7 @@ input, textarea, select {
   box-shadow: none!important;
   opacity: 1;
 }
+
+*:focus {
+  outline: none!important;
+}
