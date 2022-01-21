@@ -40,6 +40,6 @@ input, textarea, select {
   opacity: 1;
 }
 
-*:focus {
-  outline: none!important;
+span.select2-selection.select2-selection--single {
+  outline: none;
 }
