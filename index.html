@@ -157,6 +157,7 @@
 
         <p class="bold text-center caption">Заполните все поля:</p>
 
+        <p class="text-12 text-center error-message">Текст ошибки</p>
         <div class="pos-r full-width mb-20 form__field">
             <div class="full-width select">
                 <select name="region" data-placeholder="Регион">
@@ -176,6 +177,13 @@
                    class="grey-border radius-30 block full-width light form__field_input"
                    name="code">
             <span class="pos-a radius-50-percent block pointer question" data-modal="code"></span>
+        </div>
+
+        <div class="pos-r full-width mb-20 form__field">
+            <input type="text"
+                   placeholder="E-mail"
+                   class="grey-border radius-30 block full-width light form__field_input"
+                   name="email">
         </div>
 
         <div class="pos-r full-width mb-20 form__field">
@@ -200,14 +208,6 @@
                    placeholder="+7(___)___-__-__"
                    class="grey-border radius-30 block full-width light form__field_input phone-mask"
                    name="phone_2">
-        </div>
-
-        <div class="pos-r full-width mb-20 form__field">
-            <input type="text"
-                   placeholder="E-mail"
-                   disabled="disabled"
-                   class="grey-border radius-30 block full-width light form__field_input"
-                   name="email">
         </div>
 
         <div class="pos-r full-width mb-20 form__field">
