@@ -132,6 +132,11 @@
   background-color: $primary-color;
   cursor: pointer;
   border: none;
+  @include transition-ease;
+  
+  &:hover {
+    background-color: #AD1711;
+  }
 
   &.disabled {
     opacity: .5;

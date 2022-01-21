@@ -103,6 +103,7 @@ html {
 
     &_input {
       padding: 14px 20px 16px;
+      background-color: #fff;
 
       &::placeholder {
         color: #000;
@@ -110,6 +111,13 @@ html {
         font-size: 16px;
         line-height: 20px;
         font-family: 'Montserrat', sans-serif;
+      }
+
+      &:disabled {
+
+        &::placeholder {
+          color: #898989;
+        }
       }
     }
 

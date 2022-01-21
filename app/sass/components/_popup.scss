@@ -52,6 +52,17 @@
     @include response-to(small) {
       max-width: 280px;
     }
+
+    .close {
+      width: 17px;
+      height: 17px;
+      top: 11px;
+      right: 11px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      background-image: url('../../img/close.svg');
+    }
   }
 
   .button {

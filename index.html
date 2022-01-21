@@ -186,7 +186,6 @@
         </div>
 
         <div class="pos-r full-width mb-20 form__field">
-            <label class="block pos-r form__field_label" for="phone_1">Hомер телефона:</label>
             <input type="text"
                    id="phone_1"
                    placeholder="+7(___)___-__-__"
@@ -206,6 +205,7 @@
         <div class="pos-r full-width mb-20 form__field">
             <input type="text"
                    placeholder="E-mail"
+                   disabled="disabled"
                    class="grey-border radius-30 block full-width light form__field_input"
                    name="email">
         </div>
@@ -213,6 +213,7 @@
         <div class="pos-r full-width mb-20 form__field">
             <input type="text"
                    placeholder="Ваш приз: БЛОГЕР бокс"
+                   disabled="disabled"
                    class="grey-border radius-30 block full-width light form__field_input"
                    name="prize">
         </div>
@@ -221,6 +222,7 @@
             <label class="block pos-r form__field_label" for="index">Точный адрес доставки:</label>
             <input type="text"
                    id="index"
+                   disabled="disabled"
                    placeholder="Индекс"
                    class="grey-border radius-30 block full-width light form__field_input"
                    name="index">
@@ -228,7 +230,7 @@
 
         <div class="pos-r full-width mb-20 form__field">
             <div class="full-width select">
-                <select name="city" data-placeholder="Город">
+                <select name="city" class="with-input" data-placeholder="Город">
                     <option value=""></option>
                     <option value="1">Город 1</option>
                     <option value="2">Город 2</option>
@@ -241,7 +243,7 @@
 
         <div class="pos-r full-width mb-20 form__field">
             <div class="full-width select">
-                <select name="street" data-placeholder="Улица">
+                <select name="street" class="with-input" data-placeholder="Улица">
                     <option value=""></option>
                     <option value="1">Улица 1</option>
                     <option value="2">Улица 2</option>
@@ -254,8 +256,7 @@
 
         <div class="pos-r full-width mb-20 form__field">
             <div class="full-width select">
-                <select name="house" data-placeholder="Дом, строение, корпус">
-                    <option value=""></option>
+                <select name="house" class="with-input form-control" >
                     <option value="1">Дом, строение, корпус 1</option>
                     <option value="2">Дом, строение, корпус 2</option>
                     <option value="3">Дом, строение, корпус 3</option>
@@ -266,16 +267,11 @@
         </div>
 
         <div class="pos-r full-width mb-20 form__field">
-            <div class="full-width select">
-                <select name="flat" data-placeholder="Квартира / дом / офис">
-                    <option value=""></option>
-                    <option value="1">Квартира / дом / офис 1</option>
-                    <option value="2">Квартира / дом / офис 2</option>
-                    <option value="3">Квартира / дом / офис 3</option>
-                    <option value="4">Квартира / дом / офис 4</option>
-                    <option value="5">Квартира / дом / офис 5</option>
-                </select>
-            </div>
+            <input type="text"
+                   id="flat"
+                   placeholder="Квартира / дом / офис"
+                   class="grey-border radius-30 block full-width light form__field_input"
+                   name="flat">
         </div>
 
         <p class="form__note text-12 light">Внимательно проверьте введённые данные.
@@ -339,8 +335,11 @@
     <div class="pos-a full-width bg-pattern"></div>
 </main>
 
-<div class="pos-f flex flex-items-center flex-justify-center popup" data-popup="confirm" data-close="true">
+<div class="pos-f flex flex-items-center flex-justify-center popup"
+     data-popup="confirm"
+     data-close="true">
     <div class="bg-white radius-20 popup__window">
+        <span class="pos-a pointer block close" data-close="true"></span>
         <p class="light text-16 text-center">Ваша заявка принята.
             <br>Как только ваш приз будет вам отправлен, вы получите уведомление
             <br>об этом на электронную почту, указанную при регистрации.</p>
@@ -348,8 +347,11 @@
     </div>
 </div>
 
-<div class="pos-f flex flex-items-center flex-justify-center popup" data-popup="code" data-close="true">
+<div class="pos-f flex flex-items-center flex-justify-center popup"
+     data-popup="code"
+     data-close="true">
     <div class="bg-white radius-20 popup__window">
+        <span class="pos-a pointer block close" data-close="true"></span>
         <p class="light text-16 text-center">Код ваучера
             <br>Введи в это поле свой уникальный код, полученный в приложении Coca-Cola.
             <br><br>Код может быть использован только один раз.</p>
@@ -357,8 +359,11 @@
     </div>
 </div>
 
-<div class="pos-f flex flex-items-center flex-justify-center popup" data-popup="support" data-close="true">
+<div class="pos-f flex flex-items-center flex-justify-center popup"
+     data-popup="support"
+     data-close="true">
     <div class="bg-white radius-20 popup__window">
+        <span class="pos-a pointer block close" data-close="true"></span>
         <p class="bold caption text-center mb-20">Отправьте нам сообщение и мы обязательно ответим</p>
         <form class="form" data-validate="support">
             <div class="pos-r full-width mb-20 form__field">
@@ -402,8 +407,11 @@
     </div>
 </div>
 
-<div class="pos-f flex flex-items-center flex-justify-center popup" data-popup="thanks" data-close="true">
+<div class="pos-f flex flex-items-center flex-justify-center popup"
+     data-popup="thanks"
+     data-close="true">
     <div class="bg-white radius-20 popup__window">
+        <span class="pos-a pointer block close" data-close="true"></span>
         <p class="light text-16 text-center">Спасибо!
             <br><br>Ваше обращение
             <br>принято.</p>
@@ -411,7 +419,9 @@
     </div>
 </div>
 
-<div class="pos-f flex flex-items-center flex-justify-center popup" data-popup="cookie" data-close="true">
+<div class="pos-f flex flex-items-center flex-justify-center popup"
+     data-popup="cookie"
+     data-close="true">
     <div class="bg-white radius-20 popup__window">
         <p class="light text-16 cookie__text">Мы используем файлы cookie, чтобы управлять веб-сайтом, показывать
             персонализированный контент и решать бизнес-задачи. Подробнее о том, как мы используем файлы cookie,
