@@ -7,6 +7,7 @@ import {showPopup, hidePopup} from "./popup";
 import {maskInit} from "./inputMask";
 import {loader} from "./loader";
 import {accordions} from "./accordion";
+import {getCookie, setCookie} from "./cookies";
 // import {validate} from "./validation";
 
 
@@ -24,92 +25,6 @@ setTimeout(() => {
 window.addEventListener('load', function () {
 
     loader();
-
-    /*(function checkValidate() {
-        const form = $('form');
-
-        $.each(form, function () {
-            $(this).validate({
-                ignore: [],
-                errorClass: 'error',
-                validClass: 'success',
-                rules: {
-                    code: {
-                        required: true
-                    },
-                    region: {
-                        required: true
-                    },
-                    fio: {
-                        required: true
-                    },
-                    phone_1: {
-                        required: true
-                    },
-                    phone_2: {
-                        required: true
-                    },
-                    email: {
-                        required: true
-                    },
-                    prize: {
-                        required: true
-                    },
-                    index: {
-                        required: true
-                    },
-                    city: {
-                        required: true
-                    },
-                    street: {
-                        required: true
-                    },
-                    flat: {
-                        required: true
-                    },
-                    house: {
-                        required: true
-                    },
-                    all_right: {
-                        required: true
-                    },
-                    policy: {
-                        required: true
-                    },
-                    conditions: {
-                        required: true
-                    },
-                    cookie: {
-                        required: true
-                    },
-                    support_email: {
-                        required: true
-                    },
-                    support_topic: {
-                        required: true
-                    },
-                    support_name: {
-                        required: true
-                    },
-                    support_message: {
-                        required: true
-                    },
-                },
-                errorElement: 'span',
-                errorPlacement: function (error, element) {
-                    const placement = $(element).data('error');
-                    if (placement) {
-                        $(placement).append(error);
-                    } else {
-                        error.insertBefore(element);
-                    }
-                }
-            });
-        });
-        $.validator.addMethod('Email', function (value, element) {
-            return this.optional(element) || /\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,6}/.test(value);
-        });
-    })();*/
 
     (function accordion() {
         const accordionsList = [...document.querySelectorAll('.accordion')];
@@ -146,8 +61,8 @@ window.addEventListener('load', function () {
     })();
 
     (function selects() {
-        if($('.select').length > 1) {
-            $('select').each(function() {
+        if ($('.select').length > 1) {
+            $('select').each(function () {
                 let withInput = $(this).hasClass('with-input');
                 let $this = $(this).not('.select-search');
                 let parent = $(this).not('.select-search').parents('.select');
@@ -157,7 +72,7 @@ window.addEventListener('load', function () {
                     dropdownParent: parent
                 }*/);
             });
-            $('.select-search').each(function() {
+            $('.select-search').each(function () {
                 let withInput = $(this).hasClass('with-input');
                 let $this = $(this);
                 let parent = $(this).parents('.select');
@@ -171,6 +86,32 @@ window.addEventListener('load', function () {
                 dropdownParent: $('.select')
             });
         }
+    })();
+
+    (function cookie() {
+
+        const isCookie = getCookie('access-cookie') || null;
+
+        if (isCookie) {
+            const cookieModal = document.querySelector('[data-popup="cookie"]');
+            cookieModal.parentElement.removeChild(cookieModal);
+            return;
+        }
+
+        const setCookieBtns = [...document.querySelectorAll('.set-cookie')];
+
+        setCookieBtns.forEach(b => b.addEventListener('click', () => {
+            const today = new Date()
+            const tomorrow = new Date(today)
+            tomorrow.setDate(tomorrow.getDate() + 365);
+
+            setCookie('access-cookie', true, {
+                expires: tomorrow,
+            });
+
+            document.querySelector('.popup.active')
+                .classList.remove('active');
+        }))
     })();
 });
 

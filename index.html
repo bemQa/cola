@@ -256,7 +256,7 @@
 
         <div class="pos-r full-width mb-20 form__field">
             <div class="full-width select">
-                <select name="house" class="with-input form-control" >
+                <select name="house" class="with-input form-control">
                     <option value="1">Дом, строение, корпус 1</option>
                     <option value="2">Дом, строение, корпус 2</option>
                     <option value="3">Дом, строение, корпус 3</option>
@@ -315,8 +315,7 @@
                        id="cookie">
                 <span class="light text-12 pos-r pointer flex check__text">
                     <a href="#"
-                       class="light text-12 underline"
-                       data-modal="cookie">Соглашение об использовании файлов cookie</a>
+                       class="light text-12 underline">Соглашение об использовании файлов cookie</a>
                 </span>
             </label>
         </div>
@@ -401,7 +400,7 @@
             <button type="submit"
                     class="mx-auto text-center bold pointer block button radius-30"
                     data-modal="thanks"
-                    >отправить
+            >отправить
             </button>
         </form>
     </div>
@@ -419,7 +418,7 @@
     </div>
 </div>
 
-<div class="pos-f flex flex-items-center flex-justify-center popup"
+<div class="pos-f flex flex-items-center flex-justify-center popup active"
      data-popup="cookie"
      data-close="true">
     <div class="bg-white radius-20 popup__window">
@@ -465,11 +464,9 @@
 
         <div class="popup__buttons">
             <a href="#"
-               class="button mx-auto text-center bold pointer block radius-30"
-               data-close="true">одобрить всё</a>
+               class="button mx-auto text-center bold pointer block radius-30 set-cookie">одобрить всё</a>
             <a href="#"
-               class="button mx-auto text-center bold pointer block radius-30"
-               data-close="true">подтвердить выбор</a>
+               class="button mx-auto text-center bold pointer block radius-30 set-cookie">подтвердить выбор</a>
             <a href="#"
                class="button mx-auto text-center bold pointer block radius-30"
                data-close="true">отклонить всё</a>

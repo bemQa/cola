@@ -8,8 +8,4 @@ export const loader = function () {
     if (loader.classList.contains('active')) {
         loader.classList.remove('active');
     }
-
-    /*setTimeout(() => {
-        loader.parentElement.removeChild(loader);
-    }, 1500);*/
 }
