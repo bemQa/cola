@@ -22,8 +22,6 @@ export const validate = function (form) {
         },
         submitHandler: function (e) {
             e.preventDefault();
-            // const loader = ctxForm.find('.loader');
-            // loader.addClass('active');
         }
     });
 

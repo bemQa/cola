@@ -63,22 +63,12 @@ window.addEventListener('load', function () {
     (function selects() {
         if ($('.select').length > 1) {
             $('select').each(function () {
-                let withInput = $(this).hasClass('with-input');
                 let $this = $(this).not('.select-search');
-                let parent = $(this).not('.select-search').parents('.select');
-                $this.select2(/*{
-                    tags: withInput,
-                    minimumResultsForSearch: Infinity,
-                    dropdownParent: parent
-                }*/);
+                $this.select2();
             });
             $('.select-search').each(function () {
-                let withInput = $(this).hasClass('with-input');
                 let $this = $(this);
-                let parent = $(this).parents('.select');
-                $this.select2(/*{
-                    dropdownParent: parent
-                }*/);
+                $this.select2();
             });
         } else {
             $('select').select2({

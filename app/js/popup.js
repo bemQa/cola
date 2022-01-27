@@ -56,6 +56,9 @@ export const showPopup = function (e) {
                 conditions: {
                     required: true
                 },
+                privacy_data: {
+                    required: true
+                },
                 cookie: {
                     required: true
                 },
