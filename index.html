@@ -486,5 +486,50 @@
     </div>
 </div>
 
+<div class="pos-f flex flex-justify-center popup stop-popup active"
+     data-popup="stop"
+     data-close="true">
+    <div class="bg-white radius-20 popup__window">
+        <span class="pos-a pointer block close" data-close="true"></span>
+        <p class="bold text-center caption" style="margin-bottom: 20px;">В связи с решением организатора, стимулирующая рекламная акция «Национальное промо Coca-Cola <br>“Скринтайм” 2022» приостанавливается досрочно с 18.00, <br>14 марта 2022 г.</p>
+        <p class="light text-16 text-center">
+            Ранее выигранные призы будут переданы участникам промо-акций в соответствии с их правилами. Полученные участниками баллы, которые не были погашены и обменены на призы, не будут доступны для дальнейшего использования. <br><br>
+            Приносим извинения за возможные неудобства. По любым возникающим вопросам, вы можете связаться с нами по электронной почте (<a href="mailto:cocacola@coca-cola.com" style="color: blue; text-decoration: underline;">cocacola@coca-cola.com</a>), либо позвонив на горячую линию по номеру телефона <br><b><a href="tel:+7 (800) 200 2222" style="color: black;">+7 (800) 200 2222</a></b> <br>(бесплатный звонок), для звонков из Москвы — <br>
+            <b><a href="tel:+ 7 (495) 956–55-22" style="color: black;">+ 7 (495) 956–55-22</a></b>. <br>
+            По вопросам, связанным с доставкой Призов вы можете обратиться в службу поддержки Организатора <br><a href="mailto:coca-cola@delivery.emg.ru" style="color: blue; text-decoration: underline;">coca-cola@delivery.emg.ru</a>
+        </p>
+        <a href="#" class="mx-auto text-center bold pointer block button radius-30" data-close="true">понятно</a>
+    </div>
+</div>
+<style>
+    .stop-popup {
+        /*min-height: 900px;*/
+        overflow-y: scroll;
+    }
+
+    .stop-popup .popup__window {
+        min-height: 920px;
+    }
+
+    @media (max-width: 767px) {
+        .stop-popup {
+            min-height: auto;
+        }
+
+        .stop-popup .popup__window {
+            min-height: 770px;
+        }
+
+        .stop-popup .caption {
+            font-size: 16px;
+            line-height: 19px;
+        }
+
+        .stop-popup .text-16 {
+            font-size: 14px;
+            line-height: 16px;
+        }
+    }
+</style>
 </body>
 </html>
